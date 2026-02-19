@@ -16,6 +16,9 @@
     <div class="splash__content">
       <p class="splash__eyebrow">Web &amp; Software Development</p>
       <h1 class="splash__name">Rosenfeld Studio</h1>
+      <button class="snake-trigger" id="snakeTrigger" aria-label="Play a game">
+        <span></span><span></span><span></span>
+      </button>
       <p class="splash__status">Site in progress — check back soon.</p>
       <a href="mailto:rosenfeldstudiollc@gmail.com" class="splash__email">
         rosenfeldstudiollc@gmail.com
@@ -26,6 +29,30 @@
   <footer class="footer">
     <p>&copy; 2026 Rosenfeld Studio LLC</p>
   </footer>
+
+  <!-- Snake Easter Egg -->
+  <div class="snake-overlay" id="snakeOverlay" aria-hidden="true">
+    <div class="snake-modal">
+      <div class="snake-header">
+        <span class="snake-title">Snake</span>
+        <span class="snake-score">Score: <span id="score">0</span></span>
+        <button class="snake-close" id="snakeClose" aria-label="Close">✕</button>
+      </div>
+      <canvas id="snakeCanvas"></canvas>
+      <div class="dpad" id="dpad">
+        <button class="dpad__btn" data-dir="up">↑</button>
+        <div class="dpad__row">
+          <button class="dpad__btn" data-dir="left">←</button>
+          <div class="dpad__center"></div>
+          <button class="dpad__btn" data-dir="right">→</button>
+        </div>
+        <button class="dpad__btn" data-dir="down">↓</button>
+      </div>
+      <p class="snake-hint" id="snakeHint">Swipe or use the d-pad to start</p>
+    </div>
+  </div>
+
+  <script src="snake.js"></script>
 
 </body>
 </html>

@@ -56,6 +56,38 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* ── Snake trigger ────────────────────────────── */
+.snake-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  margin: 0 auto 1.25rem;
+}
+
+.snake-trigger span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sand);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+.snake-trigger span:nth-child(2) { animation-delay: 0.2s; }
+.snake-trigger span:nth-child(3) { animation-delay: 0.4s; }
+
+.snake-trigger:hover span { background: var(--terra); }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.4); }
+}
+
 .splash__status {
   font-size: 1.05rem;
   color: var(--muted);
@@ -74,6 +106,117 @@ body {
 }
 
 .splash__email:hover { opacity: 0.7; }
+
+/* ── Snake Easter Egg ────────────────────────── */
+.snake-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(59, 42, 30, 0.7);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.snake-overlay.active {
+  display: flex;
+}
+
+.snake-modal {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+}
+
+.snake-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 0.75rem;
+}
+
+.snake-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--brown);
+  flex: 1;
+}
+
+.snake-score {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.snake-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.snake-close:hover { background: var(--sand); }
+
+#snakeCanvas {
+  display: block;
+  border-radius: 6px;
+  background: var(--brown);
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+/* ── D-pad ────────────────────────────────────── */
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 0.75rem;
+}
+
+.dpad__row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dpad__btn {
+  width: 48px;
+  height: 48px;
+  background: var(--brown);
+  color: var(--cream);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.dpad__btn:active { background: var(--terra); }
+
+.dpad__center {
+  width: 48px;
+  height: 48px;
+}
+
+.snake-hint {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
 
 /* ── Footer ───────────────────────────────────── */
 .footer {
