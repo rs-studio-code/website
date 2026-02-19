@@ -1,0 +1,84 @@
+/* ── Reset & Base ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:   #f7f3ee;
+  --brown:   #3b2a1e;
+  --terra:   #b85c38;
+  --sand:    #d4bfa0;
+  --muted:   #7a6455;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Splash ───────────────────────────────────── */
+.splash {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.splash__content {
+  max-width: 560px;
+}
+
+.splash__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 1.25rem;
+}
+
+.splash__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--brown);
+  margin-bottom: 1.5rem;
+}
+
+.splash__status {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.splash__email {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--terra);
+  text-decoration: none;
+  border-bottom: 1px solid var(--terra);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.splash__email:hover { opacity: 0.7; }
+
+/* ── Footer ───────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.78rem;
+  color: var(--sand);
+}
